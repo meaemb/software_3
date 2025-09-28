@@ -11,10 +11,12 @@ public final class App {
 
         // Demo PDF (fake bytes)
         byte[] pdfBytes = "%PDF-1.7 sample content".getBytes(StandardCharsets.UTF_8);
-        PdfDocument pdf = new PdfDocument("report.pdf", pdfBytes);
+        PdfDocument pdf1 = new PdfDocument("report.pdf", pdfBytes);
+        PdfDocument pdf2 = new PdfDocument("invoice.pdf", "another pdf bytes".getBytes(StandardCharsets.UTF_8));
 
-        // Client uses only Printer interface
         PrintService service = new PrintService(adapter);
-        service.print(pdf);
+        service.print(pdf1);
+        service.print(pdf2);
+
     }
 }

@@ -22,7 +22,10 @@ public final class PdfPrinterAdapter implements Printer {
         if (!(document instanceof PdfDocument pdf)) {
             throw new IllegalArgumentException("Adapter supports only PdfDocument");
         }
+        System.out.println("[Adapter] Received PDF: " + pdf.name());
         WordDocument word = converter.convert(pdf);
+        System.out.println("[Adapter] Converted to WORD: " + word.name() + " (" + word.bytes().length + " bytes)");
         legacy.printWordDoc(word);
     }
+
 }

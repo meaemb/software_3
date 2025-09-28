@@ -10,7 +10,9 @@ public final class PrintService {
     }
 
     public void print(Document document) {
+        System.out.println("[Service] Submitting job...");
         printer.safePrint(document);
-        System.out.println("PrintService: job finished!\n");
+        System.out.println("[Service] Job finished\n");
     }
+
 }
