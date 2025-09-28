@@ -5,6 +5,7 @@ import java.util.Objects;
 
 /** Fake converter for demo purposes. Replace with a real library if needed. */
 public final class PdfToWordConverter implements DocumentConverter<PdfDocument, WordDocument> {
+
     @Override
     public WordDocument convert(PdfDocument source) {
         Objects.requireNonNull(source, "source");
